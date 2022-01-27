@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="cmpevt" event="c:CompEvent" action="{!c.handleEvent}"/>
+    <c:childcomp aura:id="childId" childatt="from parent"/>
+    
+    <lightning:button label ="CallChildcomponet" onclick="{!myAction}"/>
+</aura:component>

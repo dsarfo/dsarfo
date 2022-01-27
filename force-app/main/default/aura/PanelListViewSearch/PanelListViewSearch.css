@@ -1,0 +1,8 @@
+.THIS.exampleHolder{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+   margin-left:auto;
+    margin-right:auto;
+}

@@ -1,0 +1,25 @@
+<aura:component controller="Student1Controller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="stud" type="Student1__c[]"/>
+    <aura:handler name="init" value="{!this}"  action="{!c.createStudentlist}" />
+    Student Name  &nbsp; &nbsp; Age<br/>
+    <aura:iteration items="{!v.stud}" var="s">
+    <ol>
+        <li>
+            {!s.Name} &nbsp; &nbsp; {!s.Age__c}
+        </li>
+        
+        </ol>
+    
+    </aura:iteration>
+  <div class="white">
+    Hello, HTML!
+  </div>
+  
+  <h2>Check out the style in this list.</h2>
+  
+  <ul>
+    <li class="red">I'm red.</li>
+    <li class="blue">I'm blue.</li>
+    <li class="green">I'm green.</li>
+  </ul>
+</aura:component>

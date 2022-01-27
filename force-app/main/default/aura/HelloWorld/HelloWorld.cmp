@@ -1,0 +1,24 @@
+<aura:component implements="force:hasRecordId,force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" controller="HelloWorldAccount" access="global" >
+    <aura:attribute name="myAccount" type="Account" />
+    
+    <!--  <aura:attribute name="userInput" type="string" default ="there"/>
+    <lightning:input name="UserInput" label="Enter a Text" placeholder="type here" aura:id="txtName"/>
+    <lightning:button variant="success" label="Click Me!" title="Click me!" onclick="{!c.handleClick}" class="slds-m-left_x-small"/>
+   <aura:handler name="init" value="{!this}" action ="{!c.handleClick}"/>
+  Hello, {!v.userInput}
+    {!v.recordId}<br/>
+    {!v.sObjectName}<br/> -->
+    <br/><br/>
+     
+     <lightning:card footer="{!v.myAccount.Website}" title="{!v.myAccount.Name}">
+       <aura:set attribute="actions">
+             <lightning:button variant="success" label="Edit" title="btnNew" onclick="{!c.editRecord}"/>
+        </aura:set> 
+        <p class="slds-p-horizontal_small">
+            {!v.myAccount.Type}<br/>
+             {!v.myAccount.Industry}<br/>
+             {!v.myAccount.Phone}<br/>
+        </p>
+    </lightning:card>
+    
+</aura:component>

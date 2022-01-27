@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Amount" type="double" default="100"/>
+    <aura:attribute name="Tenure" type="double" />
+    <aura:attribute name="returnval" type="double"/>
+    <aura:attribute name="enable" type="boolean" default="false"/>
+    
+    <ui:inputnumber value="{!v.Amount}" aura:id="txtAmount" label="Amount: "></ui:inputnumber>
+    <ui:inputnumber value="{!v.Tenure}"  label="Tenure: "></ui:inputnumber><br/>
+   Return: <ui:outputnumber value="{!v.returnval}"/><br/>
+    <lightning:button label="Compute" disabled="{!v.enable}" onclick="{!c.myAction}"/>
+    <aura:handler name="change" action="{!c.validate}" value="v.Amount"></aura:handler>
+    <br/><br/><br/>
+  &nbsp; &nbsp;  Simple Calculator:<br/>
+    <aura:attribute name="fnum" type="double"/>
+    <aura:attribute name="lnum" type="double" default="0"/> &nbsp; &nbsp;
+   <ui:inputnumber label="Enter number: " aura:id="txtNumber"/>&nbsp; &nbsp;
+    <lightning:button label=" + " name="btnAdd" onclick="{!c.Pars}"/> &nbsp;&nbsp;
+    <lightning:button label=" = " name="btntotal" onclick="{!c.TotalS}"/>
+</aura:component>

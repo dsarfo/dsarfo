@@ -1,0 +1,18 @@
+<apex:page controller="caselist">
+    <apex:includeScript id="my" value="{!urlfor($Resource.domjs)}"/>
+   
+    <apex:form > 
+      <!--  <apex:pageMessage summary="This is a page Message" severity="error" strength="1">
+    </apex:pageMessage> -->
+        <apex:messages />
+        <apex:image value="{!urlfor($Resource.img1)}" />
+    <apex:pageBlock >
+    <apex:pageBlocktable value="{!cslist1}" var="c">
+        <apex:column value="{!c.cs.casenumber}"/>
+        <apex:column ><apex:inputCheckbox value="{!c.chk}"/></apex:column>
+        </apex:pageBlocktable>
+        <apex:pageBlockButtons >
+            <apex:commandButton onclick="d();return false;" value="My js"></apex:commandButton>
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+</apex:form></apex:page>

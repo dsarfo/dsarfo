@@ -1,0 +1,17 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="fetchAccountInfo">
+    <aura:attribute name="myRecord" type="Account"/>
+    <!--using aura system handler event i initialise the component action attribute  to
+call the javascript method 'c.getAccount' then the value attribute is assign as 'this' which apparently
+means the current component-->
+    <aura:handler name="init" value="{!this}" action="{!c.getAccounth}"/> 
+   <lightning:card  title="{!v.myRecord.Name}">
+             
+    <!--  <lightning:button variant="success" label="Success" title="Successful action" onclick={!handleClick} class="slds-m-left_x-small">
+</lightning:button> -->
+   
+       <p class="slds-p-horizontal_small">{!v.myRecord.Phone} </p><br/>
+  
+       <p class="slds-p-horizontal_small">{!v.myRecord.Industry} </p><br/>
+            <p slot="footer">{!v.myRecord.Website}</p>
+        </lightning:card>
+</aura:component>

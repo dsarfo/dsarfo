@@ -1,0 +1,85 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="numf" type="decimal"/>
+    <aura:attribute name="nums" type="decimal"/>
+    <aura:attribute name="res" type="decimal"/>
+    <div><b>Calculator Example</b>
+    </div>
+    <div>
+        <ui:inputNumber label="First Number" aura:id="fnum" value="{!v.numf}"/>
+    </div><br/>
+    <div>
+        <ui:inputNumber label="Last Number" aura:id="lnum" value="{!v.nums}"/>
+    </div><br/>
+    <div>
+        <ui:inputNumber label="Total" aura:id="sum" value="{!v.res}"/>
+    </div><br/>
+    <div>
+        <ui:button label="click me!" press="{!c.calculate}" class="button"/>
+    </div>
+    <!-- DATA SERVICES STRATS HERE-->
+    <aura:attribute name="property" type="Account"/>
+    <lightning:recordViewForm aura:id="viewForm" recordId="{!v.Account.Id}" objectApiName="Account">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <img src="{!v.property.Thumbnail__c}" class="slds-avatar_large slds-avatar_circle" alt="{!v.targetFields.Title_c}"/>
+            </div>
+            <div class="slds-media__body">
+                <lightning:layout class="slds-hint-parent">
+                    <a onclick="{!c.navToRecord}">
+                        <h3 class="slds-text-heading_small slds-m-bottom_xx-small">{!v.Account.Name}</h3>
+                    </a>
+                    <lightning:buttonIcon iconName="utility:edit" class="slds-col_bump-left" iconClass="slds-button__icon_hint" variant="bare" alternativeText="Edit Record" onclick="{!c.editRecord}"/>
+                </lightning:layout>
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="6">
+                        <lightning:outputField fieldName="Phone"/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:outputField fieldName="Website"/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:outputField fieldName="Industry"/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:outputField fieldName="Type"/>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </div>
+    </lightning:recordViewForm>
+    
+    <lightning:recordEditForm aura:id="editForm" recordId="{!v.Account.Id}" objectApiName="Account" class="slds-hide" onsuccess="{!c.handleSuccess}">
+    <div class="slds-media">
+        <div class="slds-media__figure">
+            <img src="{!v.property.Thumbnail__c}" class="slds-avatar_large slds-avatar_circle" alt="{!v.targetFields.Title_c}" />
+        </div>
+        <div class="slds-media__body">
+            <lightning:layout>
+                <a onclick="{!c.navToRecord}">
+                    <h3 class="slds-text-heading_small slds-m-bottom_xx-small">{!v.Account.Name}</h3>
+                </a>
+            </lightning:layout>
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="6">
+                    <lightning:inputField fieldName="Phone"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:inputField fieldName="Website"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:inputField fieldName="Industry"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:inputField fieldName="Rating"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <lightning:layout horizontalAlign="center" class="slds-m-top_large">
+                <lightning:button variant="neutral" label="Cancel" title="Cancel" type="text" onclick="{!c.handleCancel}"/>
+                <lightning:button variant="brand" label="Submit" title="Submit" type="submit"/>
+            </lightning:layout>
+        </div>
+    </div>
+</lightning:recordEditForm>
+
+    
+</aura:component>

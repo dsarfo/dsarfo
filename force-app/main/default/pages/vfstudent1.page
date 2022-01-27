@@ -1,0 +1,35 @@
+<apex:page Controller="Student1Controller" lightningStylesheets="true">
+<apex:form >
+<apex:pagemessages ></apex:pagemessages>
+<apex:pageBlock title="Student Entry Form">
+<apex:pageBlockSection >
+<apex:inputField label="Name" value="{!St.Name}"/><br/>
+<apex:inputField label="Age" value="{!St.Age__c}"/><br/>
+<apex:inputField label="Sex/Gender" value="{!St.Sex__c}"/><br/>
+<apex:inputField label="Year of Admission" value="{!St.Year__c}"/><br/>
+<apex:inputField label="Description" value="{!St.Description__c}"/><br/>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton action="{!saved}" value="Save" title="Save" />
+<apex:commandButton action="{!saved}" value="Save" title="Save" />
+
+<apex:commandButton action="{!canceled}" value="Refresh" title="Cancel"/>
+</apex:pageBlockButtons>
+    <apex:pageBlockTable value="{!stlist}" var="s">
+        <apex:column headerValue="Name"><apex:outputText value="{!s.Name}" id="txtName"/>
+        </apex:column>
+        <apex:column headervalue="Age"><apex:outputText value="{!s.Age__c}" id="txtAge"/>
+        </apex:column>
+        <apex:column headerValue="Year"><apex:outputText value="{!s.Year__c}" id="txtYear"/>
+        </apex:column>
+        <apex:column headerValue="Sex"><apex:outputText value="{!s.Sex__c}" id="txtSex"/>
+        </apex:column>
+        <apex:column headerValue="Description"><apex:outputText value="{!s.Description__c}" id="txtDescription"/>
+        </apex:column>
+        
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

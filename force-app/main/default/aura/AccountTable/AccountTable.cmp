@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="records" type="Account[]" required ="true" default=""/>
+    <aura:attribute name="columns" type="list" default="[{label:'Name',fieldName:'Name',type:'text'},
+                                                        {label:'Phone',fieldName:'Phone',type:'text'},
+                                                        {label:'Website',fieldName:'Website',type:'text'},
+                                                        {label:'Industry',fieldName:'Industry',type:'text'},
+                                                        {label:'Type',fieldName:'Type',type:'text'}
+                                                        ]"/>
+    <lightning:datatable
+                         keyField="id"
+                         data="{! v.records }"
+                         columns="{! v.columns }"
+                         hideCheckboxColumn="false"/>
+</aura:component>

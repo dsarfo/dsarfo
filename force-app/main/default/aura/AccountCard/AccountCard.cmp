@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="records" type="Account[]" required ="true" default=""/>
+    
+	<lightning:layout multipleRows="true">
+        <aura:iteration items="{!v.records}" var = "record1" >
+            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDeviceSize="3" padding="around-small">
+                <c:HelloWorld myAccount="{!record1}"/>
+                
+            </lightning:layoutItem>     
+        </aura:iteration>
+    </lightning:layout>
+</aura:component>

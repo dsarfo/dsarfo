@@ -1,0 +1,12 @@
+<apex:page standardController="case">
+    <apex:slds />
+  <!-- Begin Default Content REMOVE THIS -->
+ <h1>Congratulations</h1>
+    <apex:pageMessages ></apex:pageMessages>
+ <apex:pageBlock title="Cases Entry form">
+     <apex:pageBlockSection >
+     
+     </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+</apex:page>

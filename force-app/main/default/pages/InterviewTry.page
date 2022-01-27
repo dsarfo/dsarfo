@@ -1,0 +1,12 @@
+<apex:page standardController="Account" recordSetVar="accounts" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock >
+  <apex:pageBlockTable value="{!accounts}" var="a">
+  <apex:column headerValue="Name" value="{!a.Name}"/>
+  <apex:column headerValue="Phone" value="{!a.Phone}"/>
+  <apex:column headerValue="Industry" value="{!a.Industry}"/>
+  </apex:pageBlockTable>
+  </apex:pageBlock>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

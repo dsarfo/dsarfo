@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="childatt" type="String" default="Im a child component"/>
+    <aura:method name="childm" action="{!c.childmethod}"/>
+    <aura:method name="secChildm" action="{!c.secondChild}"/>
+    
+    <aura:registerEvent name="cmpevt" type="c:CompEvent"/>
+  
+    
+    <lightning:button label="child naren" onclick="{!c.handleClick}"/>
+    
+</aura:component>

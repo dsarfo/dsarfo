@@ -1,0 +1,45 @@
+<apex:page Controller="accountController" >
+<apex:form >
+
+<apex:pageMessages ></apex:pageMessages>
+
+    <apex:pageBlock title="Account Entry Form">
+    
+             <!--this will insert a section controls on the apex form -->
+            <apex:pageBlockSection >
+                <apex:inputField label="Name" value="{!acc.Name}"/>
+                <apex:inputField label="Account Revenue" value="{!acc.annualrevenue}"/>
+                <apex:inputField label="Rating" value="{!acc.rating}"/>
+                <apex:inputField label="Industry" value="{!acc.industry}"/>
+            </apex:pageBlockSection>
+            
+            <!--this will insert buttom block controls on the apex form -->
+            <apex:pageBlockButtons location="bottom" >
+
+                <apex:commandButton action="{!save1}" value="Save" title="Save" />
+                
+                <apex:commandButton action="{!cancel1}" value="Cancel" title="Cancel"/>
+                
+            </apex:pageBlockButtons>
+</apex:pageBlock>
+        <apex:outputpanel id="counter">   
+        <apex:inputCheckbox value="{!cb}"/>
+        <apex:actionSupport event="onclick" action="{!togglelist}" rendered="{!cb}"/>
+        </apex:outputpanel>
+        
+
+
+<apex:pageblock title="Account Created Today" rendered="{!cb}" >
+<apex:pageBlockTable value="{!MYa}" var="acclist" columns="4">
+
+    
+    <apex:column headerValue="Name"><apex:outputField value="{!acclist.Name"/></apex:column>
+    <apex:column headerValue="Account Revenue" ><apex:outputField value="{!acclist.annualrevenue"/></apex:column>
+    <apex:column headerValue="Rating"><apex:outputField value="{!acclist.rating"/></apex:column>
+    <apex:column headerValue="Industry"><apex:outputField value="{!acclist.industry"/></apex:column>
+
+</apex:pageBlockTable>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

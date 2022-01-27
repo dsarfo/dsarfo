@@ -1,0 +1,24 @@
+<apex:page controller="accountController">
+<apex:form >
+<apex:pageblock title="Account Created Today" rendered="{!cb}" >
+          
+        <apex:outputpanel id="counter">   
+        <apex:inputCheckbox value="{!cb}"/>
+        <apex:actionSupport event="onclick" action="{!togglelist}" rendered="{!cb}"/>
+        </apex:outputpanel>
+        
+
+
+<apex:pageBlockTable value="{!MYa}" var="acclist" columns="4">
+
+    
+    <apex:column headerValue="Name"><apex:outputField value="{!acclist.Name"/></apex:column>
+    <apex:column headerValue="Account Revenue" ><apex:outputField value="{!acclist.annualrevenue"/></apex:column>
+    <apex:column headerValue="Rating"><apex:outputField value="{!acclist.rating"/></apex:column>
+    <apex:column headerValue="Industry"><apex:outputField value="{!acclist.industry"/></apex:column>
+
+</apex:pageBlockTable>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

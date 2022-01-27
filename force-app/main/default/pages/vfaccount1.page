@@ -1,0 +1,20 @@
+<apex:page standardController="case" recordSetVar="cas" >
+<apex:slds />
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations {! $Profile.name}</h1>
+  This is your new Page: vfaccount1
+  
+  <apex:pageBlock >
+  <apex:pageBlockSection collapsible="true" title="case" columns="3">
+  <apex:pageBlockTable value="{!cas}" var="acc1" align="middle">
+  
+
+  <apex:column headervalue="CaseNumber"><apex:outputField value="{!acc1.casenumber}"/> </apex:column>
+  <apex:column headervalue="Case Subject"><apex:outputField value="{!acc1.subject}"/> </apex:column>
+  <apex:column headervalue="Case Status"><apex:outputField value="{!acc1.status}"/> </apex:column>
+  
+  </apex:pageBlockTable>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

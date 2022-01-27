@@ -1,0 +1,9 @@
+<apex:page standardController="Student1__c">
+<apex:slds />
+  hello {!$User.FirstName} your profile is {!$Profile.Name}
+  
+
+ <apex:detail inlineEdit="true" relatedList="false"/>
+ <!-- <apex:relatedList list="Student_Name__c"/> -->
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

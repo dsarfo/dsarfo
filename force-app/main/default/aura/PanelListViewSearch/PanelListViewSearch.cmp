@@ -1,0 +1,18 @@
+<!-- Component that implements [App Hostable], [Available for all page type],
+[available for record Home] and has a global access -->
+<!--Note: This component is not yet banded to any sObject/Database -->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global">
+    
+ <!-- A string variable of name [Associate_Name] is use to hold the search text -->   
+<aura:attribute name="Associate_Name" type="string"/>
+    
+ 
+<!-- A ligthning input  with name [SearchAssociate]  and also a placeholder to 
+help describe/identify the text control -->
+     <lightning:input name="SearchAssociate" value="{! v.Associate_Name }" 
+                      placeholder="Enter associate name or associate id here..." label="Enter Associate Name or Id" />    
+    <lightning:button variant="brand" label="Seacrh" title="Search associate name or Id" onclick="{! c.SearchAssociate }" />
+<div class="exampleHolder">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    </div>
+</aura:component>

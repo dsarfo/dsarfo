@@ -1,0 +1,57 @@
+<apex:page controller="MailDeliveryStatus" id="MailingObj" action="{!on1}">
+  <!-- Heading for the page can be inserted in here 
+  i mean we can style a css header and put it in here
+  but for the mean time i just placed this h1 text in here  -->
+  <apex:slds />
+  <h1>RUSH DELIVERY</h1>
+  <apex:pageMessages ></apex:pageMessages>
+  <!-- inserting the list from the custom
+  controller (MailDeliveryStatus) in here -->
+  <apex:form id="Past_Delivery">
+        <apex:pageBlock id="thePageBlock">
+            <!--Always remember to use the correct list -->
+                  <apex:pageBlockTable value="{!pastdel}" var="pmil" id="thePageBlockTable">
+                <apex:column >
+                    <apex:outputField value="{!pmil.name}" id="MailNameR"></apex:outputfield>
+                    <apex:facet name="header">Name</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Delivery__c}" id="StatusR"></apex:outputfield>
+                    <apex:facet name="header">Delivery Status</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Fragile__c}" id="FragileR"></apex:outputfield>
+                    <apex:facet name="header">Fragile</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Height__c}" id="HeightR"></apex:outputfield>
+                    <apex:facet name="header">Height</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Inhabitants__c}" id="InhabitantR"></apex:outputfield>
+                    <apex:facet name="header">Inhabitant</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Insured__c}" id="InsuredR"></apex:outputfield>
+                    <apex:facet name="header">Insured</apex:facet>
+                </apex:column>
+                 <apex:column >
+                    <apex:outputField value="{!pmil.Insured_Amount__c}" id="InsuredAR"></apex:outputfield>
+                    <apex:facet name="header">Insured Amount</apex:facet>
+                </apex:column>
+                  <apex:column >
+                    <apex:outputField value="{!pmil.Routes__c}" id="routesR"></apex:outputfield>
+                    <apex:facet name="header">Routes</apex:facet>
+                </apex:column>
+             
+  <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton"/> 
+            </apex:pageBlockTable>
+          <apex:pageBlockButtons >
+               <apex:commandButton value="Edit" action="{!save}" id="editButton"/>
+                <apex:commandButton value="Save" action="{!save}" id="saveButton"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton"/>
+                   <apex:outputText value="{!pmil.Inhabitants__c}"></apex:outputText>
+            </apex:pageBlockButtons> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

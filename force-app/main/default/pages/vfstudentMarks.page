@@ -1,0 +1,24 @@
+<apex:page Controller="StudentMarksSave" >
+<apex:form >
+<Apex:pageMessages ></Apex:pageMessages>
+<apex:pageBlock title="Student Marks Entry Form">
+<apex:pageBlockSection >
+<apex:inputField label="Student Name" value="{!Ma.Student_Name__c}"/><br/>
+<apex:inputField label="Marks" value="{!Ma.Marks__c}"/><br/>
+<apex:inputField label="Subject" value="{!Ma.Subject__c}"/><br/>
+<apex:inputField label="Year " value="{!Ma.YEAR__c}"/><br/>
+
+</apex:pageBlockSection>
+
+
+
+<apex:pageBlockButtons location="bottom">
+
+<apex:commandButton action="{!saved}" value="Save" title="Save" />
+
+<apex:commandButton action="{!canceled}" value="Cancel" title="Cancel"/>
+
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

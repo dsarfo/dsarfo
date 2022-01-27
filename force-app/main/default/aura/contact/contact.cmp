@@ -1,0 +1,20 @@
+<aura:component controller="contactIn" implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:actionOverride,flexipage:availableForRecordHome,force:hasrecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="con" type="Contact" default="{'sobjectType':'Contact'}"/>
+    <aura:attribute name="errorMessage" type="string" default=""/>
+    <aura:attribute name="flag" type="boolean" default="true"/>
+    <aura:attribute name="leadsource" type="string[]" access="global"/>
+    <aura:if isTrue="{!v.flag}">
+    {!v.errorMessage}
+    
+    </aura:if>
+    
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+    <ui:inputtext value="{!v.con.LastName}" label="Last Name"/><br/>
+    
+    <lightning:button label="Save" onclick="{!c.handleClick}"/>
+    <lightning:button label="Cancel" />
+
+</aura:component>
